@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Title I Guess</h1>
+		<p id="demo"></p>
+
+
+		<script>
+			document.write("<button type='button' id='but'></button>");
+			var parser, xmlDoc;
+			var text = "<ui><buttons>" +
+			"<button>STOP</button>" +
+			"</buttons></ui>";
+
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(text,"text/xml");
+
+			document.getElementById("but").innerHTML =
+			xmlDoc.getElementsByTagName("button")[0].childNodes[0].nodeValue;
+		</script>
+		
+</body>
+</html>
